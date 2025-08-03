@@ -1,0 +1,3 @@
+Project name - Start early.  
+Technology Stack - Html, CSS , Jakarta EE , Mysql.  
+Descprition - Start Early is a preschool educational website designed to make early learning engaging and interactive for young children. The platform includes subject-wise video lessons, single assignments per subject, and a progress tracking dashboard. Users can register, log in, view their learning history, and receive stars based on performance. Built using HTML, CSS for the frontend and Java Servlets for the backend, with MySQL for database management, the project focuses on child-friendly design, animated feedback, and simple navigation to enhance the learning experience.
