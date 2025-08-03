@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Courses</title>
+<link rel="stylesheet" href="cstyle.css">
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+	<aside class="sidebar">
+		<div class="header">
+		<img src="logo.jpg">
+			<h1>Start Early</h1>
+		</div>
+		<nav>
+			<a href="HOME_PAGE.html">
+			<i class="ri-home-3-line"></i>
+			<p>Home</p>
+			</a>
+			<a href="course.html">
+			<i class="ri-contacts-book-3-line"></i>
+			<p>Courses</p>
+			</a>
+			<a href="Dashboard.html">
+			<i class="ri-dashboard-line"></i>
+			<p>Dashboard</p>
+			</a>
+			<a href="user.html">
+			<i class="ri-user-3-line"></i>
+			<p>User</p>
+			</a>
+		</nav>
+	</aside> 
+	<div class="wrapper">
+		<nav class="nav">
+	   <header>
+        <h1>Courses</h1>
+          </header>
+          <form action="chaining" method="get">
+        <div class="search-container">
+    <input type="text" id="searchInput" name="search" placeholder="Search for subjects..." />
+    <button type="submit" class="search-btn">
+        <i class="ri-search-line"></i>
+    </button>
+</div>
+
+        </form>
+   </nav></div>
+  
+	
+    <section class="courses">
+        <div class="course" id="maths">
+            <img src="maths.jpg" alt="Maths">
+            <div class="course-info">
+                <h2>Maths</h2>
+                <button class="view-videos" onclick="viewSubjectPage('maths')">View Maths</button>
+            </div>
+        </div>
+
+        <div class="course" id="english">
+            <img src="eng.jpg" alt="English">
+            <div class="course-info">
+                <h2>English</h2>
+                <button class="view-videos" onclick="viewSubjectPage('eng')">View English</button>
+            </div>
+        </div>
+
+        <div class="course" id="tamil">
+            <img src="tamil.jpg" alt="Tamil">
+            <div class="course-info">
+                <h2>Tamil</h2>
+                <button class="view-videos" onclick="viewSubjectPage('tamil')">View Tamil</button>
+            </div>
+        </div>
+
+        <div class="course" id="hindi">
+            <img src="hindi.jpg" alt="Hindi">
+            <div class="course-info">
+                <h2>Hindi</h2>
+                <button class="view-videos" onclick="viewSubjectPage('hindi')">View Hindi</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Search function to filter subjects
+
+
+        function viewSubjectPage(subject) {
+            window.location.href = subject + ".html"; // Redirect to the subject page
+        }
+    </script>
+</body>
+</html>

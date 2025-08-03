@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet"/>
+<link rel="stylesheet" href="dstyle.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<aside class="sidebar">
+    <div class="header">
+        <img src="logo.jpg">
+        <h1>Start Early</h1>
+    </div>
+    <nav>
+        <a href="HOME_PAGE.html"><i class="ri-home-3-line"></i><p>Home</p></a>
+        <a href="course.html"><i class="ri-contacts-book-3-line"></i><p>Courses</p></a>
+        <a href="Dashboard.html"><i class="ri-dashboard-line"></i><p>Dashboard</p></a>
+        <a href="user.html"><i class="ri-user-3-line"></i><p>User</p></a>
+    </nav>
+</aside>
+
+<!-- Wrapper -->
+<div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo"><p>Dashboard</p></div>
+        <div class="nav-menu" id="navmenu">
+            <ul>
+                <li><a href="Dashboard.html" class="link">Course Progress</a></li>
+                <li><a href="assignment.html" class="link">Assignment Progress</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- User Name -->
+<div class="intro">
+    <p>Hello <span id="username"></span></p>
+</div>
+
+<!-- Course Progress -->
+<div class="title"><p><u><center>COURSE PROGRESS</center></u></p></div>
+<div class="form-box">
+    <p>ENGLISH</p>
+    <div class="progress-bar" id="english-progress"></div>
+</div>
+<div class="form-box2">
+    <p>TAMIL</p>
+    <div class="progress-bar" id="tamil-progress"></div>
+</div>
+<div class="form-box3">
+    <p>HINDI</p>
+    <div class="progress-bar" id="hindi-progress"></div>
+</div>
+<div class="form-box4">
+    <p>MATHS</p>
+    <div class="progress-bar" id="maths-progress"></div>
+</div>
+
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("getUsername") // Calls the servlet
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("username").textContent = data.username;
+            })
+            .catch(error => console.error("Error fetching username:", error));
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("course_progress")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("english-progress").textContent = data.English;
+                document.getElementById("tamil-progress").textContent = data.Tamil;
+                document.getElementById("hindi-progress").textContent = data.Hindi;
+                document.getElementById("maths-progress").textContent = data.Maths;
+
+                // Change background color for completed subjects
+                updateProgressStyle("english-progress", data.English);
+                updateProgressStyle("tamil-progress", data.Tamil);
+                updateProgressStyle("hindi-progress", data.Hindi);
+                updateProgressStyle("maths-progress", data.Maths);
+            })
+            .catch(error => console.error("Error fetching course progress:", error));
+    });
+
+    function updateProgressStyle(elementId, status) {
+        const progressBox = document.getElementById(elementId);
+        
+        // Remove existing classes
+        progressBox.classList.remove("completed", "not-completed");
+
+        // Add the correct class based on status
+        if (status === "Completed") {
+            progressBox.classList.add("completed");
+        } else {
+            progressBox.classList.add("not-completed");
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

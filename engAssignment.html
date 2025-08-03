@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Assignment</title>
+    <link rel="stylesheet" href="eastyle.css">
+</head>
+<body>
+    <header>
+        <h1>English Assignment</h1>
+    </header>
+
+    <section id="assignmentSection">
+        <form id="assignmentForm" action="engGradingServlet" method="post">
+            <input type="hidden" name="assignment_id" value="2">
+            
+            <!-- Static Assignment Questions -->
+            <div class="question-container">
+                <h2>1. Choose the correct option: </h2>
+                <p>a) A for ______ </p>
+                <label><input type="radio" name="q1" value="Apple"> APPLE</label><br>
+                <label><input type="radio" name="q1" value="Ball"> BALL</label><br>
+                <label><input type="radio" name="q1" value="Cat"> CAT</label><br>
+
+                <p>b) F for ______ </p>
+                <label><input type="radio" name="q2" value="Juice"> JUICE</label><br>
+                <label><input type="radio" name="q2" value="Fish"> FISH</label><br>
+                <label><input type="radio" name="q2" value="Igloo"> IGLOO</label><br>
+
+                <p>c) L for ______ </p>
+                <label><input type="radio" name="q3" value="Dog"> DOG</label><br>
+                <label><input type="radio" name="q3" value="Hat"> HAT</label><br>
+                <label><input type="radio" name="q3" value="Lion"> LION</label><br>
+            </div>
+
+            <div class="question-container">
+                <h2>2. Fill in the blank:</h2>
+                <p> => A B __ D E F</p>
+                <label>Answer: <input type="text" name="q4" required></label>
+
+                <p> => G H __ J K L</p>
+                <label>Answer: <input type="text" name="q5" required></label>
+
+                <p> => M N O __ Q R</p>
+                <label>Answer: <input type="text" name="q6" required></label>
+            </div>
+
+            <div class="question-container">
+                <h2>3. Match the following:</h2>
+                <p>1. Cat - _____</p>
+                <select name="q7_1" required>
+                    <option value="">Select</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Fruit">Fruit</option>
+                </select><br>
+
+                <p>2. Apple - _____</p>
+                <select name="q7_2" required>
+                    <option value="">Select</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Fruit">Fruit</option>
+                </select><br>
+
+                <p>3. Gorilla - _____</p>
+                <select name="q7_3" required>
+                    <option value="">Select</option>
+                    <option value="Animal">Animal</option>
+                    <option value="Fruit">Fruit</option>
+                </select>
+            </div>
+
+            <br><br>
+            <button type="submit">Submit Assignment</button>
+        </form>
+    </section>
+
+</body>
+</html>
+
