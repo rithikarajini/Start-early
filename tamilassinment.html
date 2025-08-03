@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Assignment</title>
+    <link rel="stylesheet" href="tamilstyle.css">
+</head>
+<body>
+    <header>
+        <h1>தமிழ் பணிக்கூடம்</h1>
+        <p>(Tamil Assignment)</p>
+    </header>
+
+    <section id="assignmentSection">
+        <form id="tamilAssignmentForm" action="tamGradingServlet" method="post">
+          <input type="hidden" name="assignment_id" value="3">
+            <!-- Tamil Questions -->
+     <div class="question-container">
+    <h2>1. உரைபொருத்து விடுக:</h2>
+    <p>a) 'ஆ' என்றால்?</p>
+    <label><input type="radio" name="q1" value="வானம்"> வானம் </label><br>
+    <label><input type="radio" name="q1" value="ஆடு"> ஆடு </label><br>
+    <label><input type="radio" name="q1" value=" பழம்"> பழம் </label><br>
+
+    <p>b) 'இ' என்றால்?</p>
+    <label><input type="radio" name="q2" value="இலை"> இலை </label><br>
+    <label><input type="radio" name="q2" value="பனி"> பனி </label><br>
+    <label><input type="radio" name="q2" value="வீடு"> வீடு </label><br>
+</div>
+
+
+            <div class="question-container">
+                <h2>2. வெற்றிடங்களை நிரப்புக:</h2>
+                <p>a) __ , ஆ, இ, ஈ</p>
+               <label><input type="radio" name="q3" value="அ">அ</label><br>
+			    <label><input type="radio" name="q3" value= "ஊ">உ</label><br>
+			    <label><input type="radio" name="q3" value="எ">எ </label><br>
+
+
+                <p>b) __ , ஊ, எ, ஏ</p>
+                      <label><input type="radio" name="q4" value="ஈ">ஈ</label><br>
+					   <label><input type="radio" name="q4" value= "உ">உ</label><br>
+					   <label><input type="radio" name="q4" value="ஏ">ஏ</label><br>
+            </div>
+
+            <div class="question-container">
+                <h2>3. ஒலிகளை பொருத்து:</h2>
+                <p>a) அப்பா: ___</p>
+                <select name="q5">
+                 <option value="">Select</option>
+                    <option value="Father">Father</option>
+                    <option value="mother">Mother</option>
+                </select><br>
+
+                <p>b) அம்மா: ___</p>
+                <select name="q6">
+                 <option value="">Select</option>
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                </select><br>
+            </div>
+            <br><br>
+            <button type="submit">Submit Assignment</button>
+        </form>
+        <p id="scoreDisplay"></p>
+    </section>
+
+</body>
+</html>

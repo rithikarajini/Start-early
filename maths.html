@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject</title>
+    <link rel="stylesheet" href="mstyle.css">
+</head>
+<body>
+    <header>
+        <h1 id="subjectTitle">Maths</h1>
+    </header>
+
+    <section id="videos">
+    <div class="video">
+        <video src="maths1.mp4" controls></video>
+        <h1>Numbers</h1>
+        </div>
+         <div class="video">
+        <video src="maths2.mp4" controls></video>
+        <h1>Addition</h1>
+        </div>
+         <div class="video">
+        <video src="maths3.mp4" controls></video>
+        <h1>Subtraction</h1>
+        </div>
+    </section>
+<header>
+        <button id="startAssignment" onclick="startAssignment()">Start Assignment</button>
+    </header>
+
+    <script>
+        function startAssignment() {
+            window.location.href = 'mathsassingment.html'; // Redirect to the assignment page
+        }
+    </script>
+</body>
+</html>

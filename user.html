@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User</title>
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<link rel="stylesheet" href="ustyle.css">
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+
+<body>
+	<aside class="sidebar">
+		<div class="header">
+		<img src="logo.jpg">
+			<h1>Start Early</h1>
+		</div>
+		<nav>
+			<a href="HOME_PAGE.html">
+			<i class="ri-home-3-line"></i>
+			<p>Home</p>
+			</a>
+			<a href="course.html">
+			<i class="ri-contacts-book-3-line"></i>
+			<p>Courses</p>
+			</a>
+			<a href="Dashboard.html">
+			<i class="ri-dashboard-line"></i>
+			<p>Dashboard</p>
+			</a>
+			<a href="user.html">
+			<i class="ri-user-3-line"></i>
+			<p>User</p>
+			</a>
+		</nav>
+	</aside>
+<div class="container">
+<h1>USER</h1>
+<div class="user-info" id="userInfo">
+<p class="loading">Loading user information...</p>
+</div>
+<button id="logoutBtn">Log Out</button>
+</div>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+
+    function fetchUserInfo() {
+        fetch('UserServlet') // URL of UserServlet
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response problem');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const userInfoDiv = document.getElementById('userInfo');
+                if (!userInfoDiv) return; // Prevent errors if the element is missing
+
+                if (data.error) {
+                    userInfoDiv.innerHTML = `<p class="loading"><strong>Error:</strong> ${data.error}</p>`;
+                } else {
+                    userInfoDiv.innerHTML = `<p><strong>Name:</strong> ${data.USERNAME}</p>
+                                             <p><strong>Email:</strong> ${data.EMAIL}</p>`;
+                }
+            })
+            .catch(error => {
+                const userInfoDiv = document.getElementById('userInfo');
+                if (!userInfoDiv) return;
+                userInfoDiv.innerHTML = `<p class="loading">Error loading user information: ${error.message}</p>`;
+            });
+    }
+
+    fetchUserInfo(); // Call function to fetch user details
+
+    // Logout Button Event Listener
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            fetch('LogoutServlet') // URL of LogoutServlet
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = 'login.html'; // Redirect to login page
+                    } else {
+                        alert('Logout failed. Please try again');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error logging out:', error);
+                    alert('An error occurred. Please try again later');
+                });
+        });
+    }
+
+});
+</script>
+</body>
+</html>

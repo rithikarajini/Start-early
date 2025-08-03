@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Assignment</title>
+    <link rel="stylesheet" href="hindistyle.css">
+</head>
+<body>
+    <header>
+        <h1>हिंदी असाइनमेंट</h1>
+        <p>(Hindi Assignment)</p>
+    </header>
+
+    <section id="assignmentSection">
+        <form id="hindiAssignmentForm" action="hinGradingServlet" method="post">
+          <input type="hidden" name="assignment_id" value="4">
+            <!-- Hindi Questions -->
+            <div class="question-container">
+                <h2>1. सही विकल्प चुनें: (choose the correct answer)</h2>
+                <p>a) 'अ' से क्या शुरू होता है? ('अ' for ?)</p>
+                <label><input type="radio" name="q1" value="अनार"> अनार</label><br>
+                <label><input type="radio" name="q1" value="आम"> आम</label><br>
+                <label><input type="radio" name="q1" value="इमली"> इमली</label><br>
+
+                <p>b) 'आ' से क्या शुरू होता है? ('आ' for ?)</p>
+                <label><input type="radio" name="q2" value="अनार"> अनार</label><br>
+                <label><input type="radio" name="q2" value="आम"> आम</label><br>
+                <label><input type="radio" name="q2" value="उल्लू"> उल्लू</label><br>
+            </div>
+
+            <div class="question-container">
+                <h2>2.सही विकल्प चुनें: (choose the correct answer)</h2>
+                <p>a) अ __ इ ई</p>
+                <label><input type="radio" name="q3" value="अ"> अ</label><br>
+                <label><input type="radio" name="q3" value="आ"> आ</label><br>
+                <label><input type="radio" name="q3" value="उ">उ </label><br>
+
+                <p>b) क __ ग घ</p>
+                 <label><input type="radio" name="q4" value=" ज"> ज</label><br>
+                <label><input type="radio" name="q4" value="झ"> झ</label><br>
+                <label><input type="radio" name="q4" value="ख">ख </label><br>
+				</div>
+
+            <div class="question-container">
+                <h2>3. हिंदी शब्दों को अंग्रेज़ी में लिखें: (write in english)</h2>
+                <p>a) आम का अंग्रेजी में अनुवाद क्या है? (आम in english is?) </p>
+                <label><input type="radio" name="q5" value="Mango"> Mango</label><br>
+                <label><input type="radio" name="q5" value="Apple"> Apple</label><br>
+                <label><input type="radio" name="q5" value="Banana"> Banana</label><br>
+
+                <p>b) उल्लू का अंग्रेजी में अनुवाद क्या है? (उल्लू in english is?)</p>
+                <label><input type="radio" name="q6" value="Cat"> Cat</label><br>
+                <label><input type="radio" name="q6" value="Owl"> Owl</label><br>
+                <label><input type="radio" name="q6" value="Dog"> Dog</label><br>
+            </div>
+
+            <br><br>
+            <button type="submit">Submit Assignment</button>
+        </form>
+        <p id="scoreDisplay"></p>
+    </section>
+</body>
+</html>

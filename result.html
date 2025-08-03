@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        .result-container {
+            margin-top: 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .stars {
+            font-size: 50px;
+            color: gold;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .correct {
+            color: green;
+            font-size: 20px;
+        }
+        .wrong {
+            color: red;
+            font-size: 20px;
+        }
+       button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover{
+	background-color: green;
+}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Assignment Results</h1>
+        <p class="score">You scored: <span id="score"></span> stars!</p>
+        <p class="stars" id="stars"></p>
+        <h2>Correct Answers:</h2>
+        <p class="correct" id="correctAnswers"></p>
+        <h2>Wrong Answers:</h2>
+        <p class="wrong" id="wrongAnswers"></p>
+        <p class="correct" id="correctAnswers"></p>
+       <a href="course.html"><button id="button">Back</button> </a>
+    </div>
+   <audio autoplay>
+    <source src="sound.mp3" type="audio/mpeg">
+</audio>
+        <script>
+        function getQueryParameter(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const score = parseInt(getQueryParameter('score')) || 0;
+            const correctAnswers = getQueryParameter('correct') || "None";
+            const wrongAnswers = getQueryParameter('wrong') || "None";
+            
+            let starCount = Math.floor(score / 2); 
+            let stars = "";
+            for (let i = 0; i < starCount; i++) {
+                stars += "⭐";
+            }
+            
+            // Update text with score/3
+            document.getElementById('score').textContent = `${starCount}`;
+            document.getElementById('stars').innerHTML = stars;
+            document.getElementById('correctAnswers').textContent = decodeURIComponent(correctAnswers);
+            document.getElementById('wrongAnswers').textContent = decodeURIComponent(wrongAnswers);
+        });
+    </script>
+</body>
+</html>
