@@ -43,7 +43,7 @@
 ## 📸 Screenshots
 ![Login Page](screenshots/login.png)
 ![Home Page](screenshots/homepage.png)
-![Course Page](screenshots/course.png)
+![Course Page](screenshots/courses.png)
 ![Video Page](screenshots/video.png)
 ![Assignment](screenshots/assignment.png)
 ![Assignment Result](screenshots/result.png)
