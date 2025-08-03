@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject</title>
+    <link rel="stylesheet" href="hstyle.css">
+</head>
+<body>
+    <header>
+        <h1 id="subjectTitle">Hindi</h1>
+     
+    </header>
+
+    <section id="videos">
+        <!-- Videos will be loaded dynamically here -->
+            <div class="video">
+        <video src="hindi1.mp4" controls></video>
+        <h1>Vyanjan</h1>
+        </div>
+         <div class="video">
+        <video src="hindi2.mp4" controls></video>
+        <h1>Svar</h1>
+        </div>
+         <div class="video">
+        <video src="hindi3.mp4" controls></video>
+        <h1>Aaloo ka challo beta</h1>
+        </div>
+    </section>
+<header>
+        <button id="startAssignment" onclick="startAssignment()">Start Assignment</button>
+    </header>
+
+    <script>
+        function startAssignment() {
+            window.location.href = 'hindiassignment.html'; // Redirect to the assignment page
+        }
+    </script>
+</body>
+</html>
